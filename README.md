@@ -71,9 +71,30 @@ this drift is the signal the models will learn from:
 
 <img width="1189" height="790" alt="download" src="https://github.com/user-attachments/assets/a5237516-288c-49a9-b410-b369189e2517" />
 
+
+## Phase 2: Baseline models (done)
+Split: 80 training / 20 validation engines (split by engine to avoid
+leakage). Scaling fit on training data only. Test set: last cycle of
+each of the 100 official test engines.
+
+|index|model|val\_RMSE|test\_RMSE|test\_NASA\_score|
+|---|---|---|---|---|
+|0|Naive \(mean\)|41\.72|41\.98|33780\.97|
+|1|Linear Regression|19\.9|20\.55|1209\.16|
+|2|Random Forest|16\.98|17\.07|896\.66|
+|3|XGBoost|16\.91|17\.11|965\.96|
+
+- [2-3 sentences: which model won, and how far it beat the naive baseline]
+- PCA: [1 sentence: how many components kept accuracy]
+
+### Plot
+<img width="585" height="455" alt="download" src="https://github.com/user-attachments/assets/0e8b5d5c-505b-4dd0-87da-e1f54e08b61b" />
+
+
+  
 ## Roadmap
 - [x] Phase 1: Explore the data
-- [ ] Phase 2: Baseline models and fair evaluation
+- [x] Phase 2: Baseline models and fair evaluation
 - [ ] Phase 3: LSTM
 - [ ] Phase 4: Transfer test and uncertainty
 - [ ] Phase 5: Final results and write-up
